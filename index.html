@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"> 
+        <title>Hello Electron</title>
+        <style>
+            body{
+                /*Atributos necesarios para centrar la imagen*/
+                background-image: url("fondo-negro.jpg");
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                /*Que cubra todo el body*/
+                background-size: cover;
+                font-size:14px;
+                /*Minimo width que tendra el body*/
+                min-width: 500px;
+            }
+            /*Contenido de dentro del formulario*/
+            .contenido-login{
+                justify-content: center;
+                width:300px;
+                max-width:100%;
+                margin:50px auto;
+                min-width: 250px;
+                font-family: 'Roboto', sans-serif;
+            }
+            .contenido-login h2{
+                text-align:center;
+                font-size:20px;
+            }
+
+            .contenido-login .btn-login{
+                background-color:#FF5964;
+                color:rgb(255, 255, 255);
+            }
+            .posicion-contenido {
+                display: flex;
+                align-items: center;
+                flex-direction: column; 
+                justify-content: center;
+                width: 100%;
+                min-height: 100%;
+                padding: 250px;
+                font-family: 'Roboto', sans-serif;
+            }
+            .contenido {
+                -webkit-border-radius: 15px 15px 15px 15px;
+                border-radius: 15px 15px 15px 15px;
+
+                background: rgb(184, 184, 184);
+                padding: 30px;
+                width: 90%;
+                max-width: 450px;
+                position: relative;
+                padding: 0px;
+                -webkit-box-shadow: 0 3px 6px 0 rgba(0,0,0,0.3);
+                box-shadow: 0 3px 6px 0 rgba(0,0,0,0.3);
+                text-align: center;
+                min-width: 320px;
+            }
+        </style>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="posicion-contenido fadeInDown zero-raduis">
+            <div class="contenido">
+                <div class="contenido-login">
+                    <h2>Login con Electron</h2>
+                    <form #form="ngForm" (ngSubmit)="submitForm(form.value)" id="formulario">
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <input type="text" class="form-control" placeholder="Usuario" [(ngModel)]="name">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <input type="password" placeholder="Contraseña" class="form-control">
+                            </div>
+                            <script> require('./index.js') </script>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
