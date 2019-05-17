@@ -11,10 +11,14 @@ function createWindow(){
         webPreferences: {
             nodeIntegration: true
         },
+            show: false,
             frame: false,
             //hace que en la barra de tareas no salga el icono de la aplicacion.
             skipTaskbar: true,
         })
+        win.once('ready-to-show', () => {
+            win.show()
+          })
         win.maximize()
         win.setMenu(null)
         win.loadURL(url.format({
@@ -33,10 +37,18 @@ exports.openWindow = () => {
             nodeIntegration: true,
             alwaysOnTop: true,
         },
+        show: false,
         frame: false,
         skipTaskbar: true,
     })
     win.close()
+    /*let parrafo = document.createElement('p')
+    let text = document.createTextNode(document.getElementById("usuario"))
+    parrafo.appendChild(text)
+    document.body.appendChild(parrafo)*/
+    newWin.once('ready-to-show', () => {
+        newWin.show()
+      })
     newWin.maximize()
     newWin.setMenu(null)
     newWin.loadURL(url.format({
